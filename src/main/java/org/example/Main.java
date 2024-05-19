@@ -47,11 +47,11 @@ public class Main {
         session2.beginTransaction();
 
         //remove the object using id
-        Car carToRemove = session2.find(Car.class, 402);
+        Car carToRemove = session2.find(Car.class, 52);
         if (carToRemove != null) {
             session2.remove(carToRemove);
         } else {
-            System.out.println("Car with ID 102 not found for removal.");
+            System.out.println("Car with not found for removal.");
         }
 
         //commit the cache

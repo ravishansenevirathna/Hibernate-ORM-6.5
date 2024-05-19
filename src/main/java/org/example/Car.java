@@ -4,6 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 /**
  * Hi 👋, I'm ravishansenevirathna
@@ -11,7 +15,10 @@ import jakarta.persistence.Id;
  * Created date : 5/19/2024
  * Created time : 9:21 AM
  */
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
 @Entity
 public class Car {
 
@@ -22,48 +29,7 @@ public class Car {
     private String model;
     private double engCap;
 
-    public Car(Integer id, String brand, String model, double engCap) {
-        this.id = id;
-        this.brand = brand;
-        this.model = model;
-        this.engCap = engCap;
-    }
 
-    public Car(int i) {
-    }
 
-    public Car() {
-    }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getBrand() {
-        return brand;
-    }
-
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
-    }
-
-    public double getEngCap() {
-        return engCap;
-    }
-
-    public void setEngCap(double engCap) {
-        this.engCap = engCap;
-    }
 }
