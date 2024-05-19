@@ -14,6 +14,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
  */
 public class Main {
     public static void main(String[] args) {
+
     // session factory
         SessionFactory sessionFactory=setUp();
     //new session
@@ -45,7 +46,7 @@ public class Main {
         //start the transaction
         session2.beginTransaction();
 
-        //remove the object
+        //remove the object using id
         Car carToRemove = session2.find(Car.class, 402);
         if (carToRemove != null) {
             session2.remove(carToRemove);
@@ -53,7 +54,10 @@ public class Main {
             System.out.println("Car with ID 102 not found for removal.");
         }
 
+        //commit the cache
         session2.getTransaction().commit();
+
+        //close the transaction
         session2.close();
 
 
@@ -66,7 +70,7 @@ public class Main {
         session3.beginTransaction();
 
 
-        //saving the object
+        //finding the object
         Car getcar = session3.find(Car.class, 1);
         System.out.println(getcar);
 
